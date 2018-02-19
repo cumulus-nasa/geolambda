@@ -6,14 +6,14 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.base
-    image: 'developmentseed/geolambda:base'
+    image: 'cumuluss/geolambda:base'
     entrypoint: /bin/bash
 
   core:
     build:
       context: .
       dockerfile: Dockerfile.core
-    image: 'developmentseed/geolambda:core'
+    image: 'cumuluss/geolambda:core'
     entrypoint: /bin/bash
     links:
       - base
@@ -22,7 +22,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.min
-    image: 'developmentseed/geolambda:min'
+    image: 'cumuluss/geolambda:min'
     entrypoint: /bin/bash
     links:
       - core
@@ -31,7 +31,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.full
-    image: 'developmentseed/geolambda:full'
+    image: 'cumuluss/geolambda:full'
     entrypoint: /bin/bash
     links:
       - core
@@ -40,7 +40,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.hdf
-    image: 'developmentseed/geolambda:hdf'
+    image: 'cumuluss/geolambda:hdf'
     entrypoint: /bin/bash
     links:
       - core
@@ -49,7 +49,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.cloud
-    image: 'developmentseed/geolambda:cloud'
+    image: 'cumuluss/geolambda:cloud'
     entrypoint: /bin/bash
     links:
       - core
